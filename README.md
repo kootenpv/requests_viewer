@@ -12,7 +12,7 @@ main("https://xkcd.com/")
 ### Main features
 
 - HTML page is being shown as how the crawler sees it
-    * Optionally can extract the domain and hot-link so that it looks almost indistuinguishable
+    * Can extract the domain and hot-link so that it looks almost indistuinguishable
 - Contains other nice functions to show lxml tree nodes
 - Can visually show diffs between 2 html pages / trees
 
@@ -20,13 +20,16 @@ main("https://xkcd.com/")
 from requests_viewer.web import view_diff_tree, get_tree
 url1 = "http://xkcd.com/"
 url2 = "http://xkcd.com/1/"
-tree1, tree2 = get_tree(url1), get_tree(url2)
+tree1 = get_tree(url1)  # get tree from request object directly
+tree2 = get_tree(url2)  # could instead use `make_tree` if you already have a req
 view_diff_tree(tree1, tree2)
 ```
 
 Results in:
 
-<img src="https://raw.githubusercontent.com/kootenpv/requests_viewer/master/resources/screenshot1.png" />
+<p align="center">
+<img src="https://raw.githubusercontent.com/kootenpv/requests_viewer/master/resources/screenshot1.png" width="80%" />
+</p>
 
 ### Installation
 
