@@ -81,3 +81,5 @@ This package is very small at the moment. I very much encourage you to contribut
 
 - Most likely we will want to show headers on the top of the package (html)
 - Make the encoding an argument (instead of fixed utf8)
+
+Note that I use [yapf](https://github.com/google/yapf) with max-line=100 to avoid any styling discussion.

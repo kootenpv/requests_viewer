@@ -19,7 +19,7 @@ def view_request(r, domain=None):
 
 
 def view_html(x):
-    with tempfile.NamedTemporaryFile(mode="w") as f:
+    with tempfile.NamedTemporaryFile(mode="w", delete=False) as f:
         f.write(x)
         webbrowser.open('file://' + f.name)
         time.sleep(1)

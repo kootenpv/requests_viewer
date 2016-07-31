@@ -9,7 +9,7 @@ def wrap_img_into_html(content_type, x):
 
 
 def view_request(r):
-    with tempfile.NamedTemporaryFile("w") as f:
+    with tempfile.NamedTemporaryFile("w", delete=False) as f:
         f.write(wrap_img_into_html(r.headers['Content-Type'], base64.b64encode(r.content)))
         webbrowser.open('file://' + f.name)
         time.sleep(1)
