@@ -80,3 +80,4 @@ def get_local_tree(url, domain=None):
 This package is very small at the moment. I very much encourage you to contribute:
 
 - Most likely we will want to show headers on the top of the package (html)
+- Make the encoding an argument (instead of fixed utf8)
