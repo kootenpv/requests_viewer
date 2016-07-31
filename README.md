@@ -5,8 +5,14 @@ The idea is that `requests_viewer` can tell us information about our requests-ob
 It opens up an HTML page with information for the request.
 
 ```python
+import requests
+from requests_viewer.web import view_request
+view_request(requests.get("https://xkcd.com/"))
+
+# or
+
 from requests_viewer import main
-main("https://xkcd.com/")
+main("https://xkcd.com/") # considers different mime types
 ```
 
 ### Main features
