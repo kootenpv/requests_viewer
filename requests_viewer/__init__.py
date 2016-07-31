@@ -1,7 +1,7 @@
 """ requests_viewer; able to show how requests look like """
 
 __project__ = 'requests_viewer'
-__version__ = '0.0.0'
+__version__ = '0.0.1'
 
 from requests_viewer.main import main
 
