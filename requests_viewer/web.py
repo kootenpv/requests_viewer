@@ -5,6 +5,7 @@ import re
 import requests
 import time
 import webbrowser
+import tempfile
 
 
 def slugify(value):
@@ -14,15 +15,14 @@ def slugify(value):
 def view_request(r, domain=None):
     if domain:
         domain = extract_domain(r.url)
-    view_tree(make_tree(r.text, domain))
+    view_tree(make_tree(r.content, domain))
 
 
 def view_html(x):
-    fname = '/tmp/' + str(hash(x)) + '.html'
-    with open(fname, 'w') as f:
+    with tempfile.NamedTemporaryFile(mode="w") as f:
         f.write(x)
-    webbrowser.open('file://' + fname)
-    time.sleep(1)
+        webbrowser.open('file://' + f.name)
+        time.sleep(1)
 
 
 def view_node(node, attach_head=False, question_contains=None):

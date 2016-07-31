@@ -1,6 +1,7 @@
 """ Contains py.test tests. """
 
 from requests_viewer.main import main
+from requests_viewer.web_compat import view_request
 
 
 def test_integration():
