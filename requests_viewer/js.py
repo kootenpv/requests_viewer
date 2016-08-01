@@ -10,7 +10,8 @@ def wrap_json_into_html(x):
 
 def view_request(r):
     js = json.dumps(r.json(), indent=4)
-    with tempfile.NamedTemporaryFile("w", delete=False) as f:
+    with tempfile.NamedTemporaryFile("w", suffix='.html', delete=False) as f:
         f.write(wrap_json_into_html(js))
+        f.flush()
         webbrowser.open('file://' + f.name)
         time.sleep(1)
