@@ -136,6 +136,10 @@ def get_tree(url, domain=None):
     return make_tree(r.text, domain)
 
 
+def get_html(url, domain=None):
+    return lxml.html.tostring(get_tree(url, domain)).decode("utf8")
+
+
 def get_local_tree(url, domain=None):
     if domain is None:
         domain = extract_domain(url)
