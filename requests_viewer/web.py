@@ -13,7 +13,7 @@ def slugify(value):
 
 
 def view_request(r, domain=None):
-    if domain:
+    if domain is None:
         domain = extract_domain(r.url)
     view_tree(make_tree(r.content, domain))
 
